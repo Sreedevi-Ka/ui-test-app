@@ -1,0 +1,38 @@
+@use "../../styles/variables" as *;
+
+.logo-wrapper {
+  overflow: hidden;
+  background-color: #1d1d1d;
+  border-bottom: 1px solid #2b2b2b;
+  padding: 28px 0;
+  position: relative;
+
+  .logo-track {
+    display: flex;
+    gap: 54px;
+    width: max-content;
+    animation: scroll 25s linear infinite;
+  }
+  .logo-item  {
+    display: flex;
+    justify-content: center;
+  }
+
+  .logo-item img {
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+}

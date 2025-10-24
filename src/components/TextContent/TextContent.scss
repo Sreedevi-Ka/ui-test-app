@@ -1,0 +1,17 @@
+@use "../../styles/variables" as *;
+
+.text-content {
+  font: poppins;
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 45px;
+  color: #474747;
+  background-color: #000;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 113px;
+  &__highlight {
+    color: #fff;
+  }
+}
