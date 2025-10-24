@@ -11,19 +11,25 @@
     display: flex;
     gap: 54px;
     width: max-content;
-    animation: scroll 25s linear infinite;
+    will-change: transform;
+    cursor: pointer;
   }
-  .logo-item  {
+  .logo-item {
     display: flex;
     justify-content: center;
   }
 
   .logo-item img {
-    opacity: 0.9;
-    transition: opacity 0.3s ease;
+    opacity: 0.7;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: brightness(0.9) grayscale(0.2);
+    transform: scale(1);
+    will-change: transform, filter, opacity;
 
     &:hover {
       opacity: 1;
+      filter: brightness(1.1) grayscale(0);
+      transform: scale(1.12);
     }
   }
 
