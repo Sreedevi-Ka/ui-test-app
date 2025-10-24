@@ -1,160 +1,69 @@
-@use "../../styles/variables" as *;
-
 .hero {
   position: relative;
+  width: 100%;
   min-height: 100vh;
-  background: linear-gradient(
-      rgba(0, 0, 0, 0.4),
-      rgba(0, 0, 0, 0.6)
-    ),
-    url('/images/hero-image.png');
+  background: url("/images/hero-image.png") no-repeat center;
   background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-
-  @media (max-width: 768px) {
-    background-attachment: scroll;
-    background-position: center top;
-  }
-  color: $text-light;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-  text-align: center;
   padding: 2rem;
 
-  &__circles {
+  &::before {
+    content: "";
     position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: end;
-    justify-content: center;
-    pointer-events: none;
-  }
-
-  .circle {
-    position: absolute;
-    left: 50%;
+    top: 0;
+    left: 0;
+    right: 0;
     bottom: 0;
-    border-radius: 9999px;
-    transform: translateX(-50%);
-
-    &-1 {
-      width: 200px;
-      height: 100px;
-      background: radial-gradient(
-        ellipse,
-        rgba($primary, 0.3) 0%,
-        transparent 70%
-      );
-    }
-    &-2 {
-      width: 400px;
-      height: 200px;
-      background: radial-gradient(
-        ellipse,
-        rgba($primary, 0.25) 0%,
-        transparent 70%
-      );
-    }
-    &-3 {
-      width: 600px;
-      height: 300px;
-      background: radial-gradient(
-        ellipse,
-        rgba($primary, 0.2) 0%,
-        transparent 70%
-      );
-    }
-    &-4 {
-      width: 800px;
-      height: 400px;
-      background: radial-gradient(
-        ellipse,
-        rgba($primary, 0.15) 0%,
-        transparent 70%
-      );
-    }
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.5)
+    );
   }
 
   &__content {
     position: relative;
-    z-index: 10;
-    max-width: 700px;
+    z-index: 1;
+    text-align: center;
+    max-width: 800px;
+    color: #fff;
   }
 
   &__title {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    font-weight: 700;
-    margin-bottom: 1rem;
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
     line-height: 1.2;
-
-    @media (max-width: 768px) {
-      font-size: clamp(2rem, 8vw, 3rem);
-    }
   }
 
   &__subtitle {
-    color: $text-gray;
-    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    font-size: 1.25rem;
     margin-bottom: 2rem;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-
-    @media (max-width: 768px) {
-      font-size: 1rem;
-    }
+    opacity: 0.9;
   }
 
   &__button {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 1rem 2rem;
-    border-radius: 9999px;
-    background: linear-gradient(to right, $primary, $secondary);
-    color: $text-light;
-    font-weight: 600;
+    background: #7b2ff7;
+    color: white;
     border: none;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
     font-size: 1rem;
-
-    @media (max-width: 768px) {
-      padding: 0.8rem 1.5rem;
-      font-size: 0.9rem;
-    }
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-      transition: left 0.5s;
-    }
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 
     &:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 20px rgba($primary, 0.4);
-    }
-
-    &:hover::before {
-      left: 100%;
+      background: #6420d0;
     }
 
     .icon {
-      transition: transform 0.3s ease;
-    }
-
-    &:hover .icon {
-      transform: translateX(5px);
+      width: 20px;
+      height: 20px;
     }
   }
 }

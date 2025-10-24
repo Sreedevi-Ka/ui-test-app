@@ -3,11 +3,12 @@ import "../styles/main.scss";
 import Grid from "../components/Grid/Grid";
 import Footer from "../components/Footer/Footer";
 import TextContent from "../components/TextContent/TextContent";
+import Hero from "../components/Hero/Hero";
 
 const LandingPage = () => {
   return (
     <div className="ai-landing">
-      {/* <Hero /> */}
+      <Hero />
       <div className="container">
         <TextContent />
         <Grid />
