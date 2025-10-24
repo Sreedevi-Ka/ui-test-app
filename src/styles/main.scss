@@ -14,7 +14,7 @@
 body {
   background: #000;
   color: variables.$text-light;
-  font-family: "Inter", sans-serif;
+  font-family: variables.$font-primary;
   margin: 0;
   overflow-x: hidden;
   line-height: 1.6;
@@ -24,7 +24,6 @@ body {
   min-height: 100vh;
 }
 
-// Global responsive utilities
 @media (max-width: 1200px) {
   .container {
     padding: 0 1rem;
@@ -37,12 +36,10 @@ body {
   }
 }
 
-// Smooth scrolling
 html {
   scroll-behavior: smooth;
 }
 
-// Focus styles for accessibility
 *:focus {
   outline: 2px solid variables.$primary;
   outline-offset: 2px;

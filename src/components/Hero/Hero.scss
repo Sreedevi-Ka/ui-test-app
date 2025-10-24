@@ -1,3 +1,5 @@
+@use "../../styles/variables" as *;
+
 .hero {
   position: relative;
   width: 100%;
@@ -7,7 +9,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  padding: $spacing-lg;
 
   &::before {
     content: "";
@@ -16,49 +18,60 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.7),
-      rgba(0, 0, 0, 0.5)
-    );
+    background: $gradient-overlay;
   }
 
   &__content {
     position: relative;
     z-index: 1;
     text-align: center;
-    max-width: 800px;
-    color: #fff;
+    max-width: 900px;
+    color: $text-light;
+    padding: 0 $spacing-sm;
   }
 
   &__title {
-    font-size: 4rem;
-    font-weight: bold;
-    margin-bottom: 1.5rem;
-    line-height: 1.2;
+    font-family: $font-primary;
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    font-weight: $font-bold;
+    margin-bottom: $spacing-md;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: $text-light;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
   }
 
   &__subtitle {
+    font-family: $font-primary;
     font-size: 1.25rem;
-    margin-bottom: 2rem;
+    font-weight: $font-regular;
+    margin-bottom: $spacing-lg;
     opacity: 0.9;
+    color: $text-muted;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   &__button {
+    font-family: $font-primary;
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    background: #7b2ff7;
-    color: white;
+    gap: $spacing-xs;
+    background: $gradient-primary;
+    color: $text-light;
     border: none;
-    padding: 1rem 2rem;
-    border-radius: 2rem;
+    padding: $spacing-sm $spacing-lg;
+    border-radius: 999px;
     font-size: 1rem;
+    font-weight: $font-medium;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    box-shadow: $shadow-md;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 
     &:hover {
-      background: #6420d0;
+      transform: translateY(-2px);
+      box-shadow: $shadow-lg;
     }
 
     .icon {
